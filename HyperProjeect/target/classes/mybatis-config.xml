@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+
+	<typeAliases>
+		<typeAlias type="com.kh.hyper.member.model.vo.Member" alias="member"/>
+		<!-- 얘가 메모리에 올라가기 전까진 의미가 없음 -->
+		<!-- OpenSession의 역할을 하는애가 필요함 -->
+	</typeAliases>
+	
+	
+	<!-- 
+		environments, dataSource => DB연걸정보
+		
+		=> DB등록정보는 서버가 실행됨과 동시에 이루어져야 하는 작업
+		서버켜지면 바로 읽히는 root-context.xml에 기술할 예정
+		
+		Spring Bean 등록 ... <= 서버켜짐과 동시에, root-conext.xml에 기재
+	-->
+
+	<mappers>
+		<mapper resource="/mapper/member-mapper.xml"/>
+	</mappers>
+
+	
+
+</configuration>
+
